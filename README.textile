@@ -1,0 +1,19 @@
+h1. Samples for module playujs of Playframework.
+
+by *Rafael Felini*
+"http://github.com/rafaelfelini":http://github.com/rafaelfelini
+
+h2. Description
+
+playujs-examples is an playframework app using playujs module
+
+h2. Running the example
+
+bc. 
+git clone git@github.com:rafaelfelini/playujs-examples.git
+cd playujs-examples
+play deps
+play run
+Browse: http://localhost:9000/
+
+Enjoy!
