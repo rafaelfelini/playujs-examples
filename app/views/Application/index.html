@@ -1,0 +1,98 @@
+#{extends 'main.html' /}
+#{set title:'playujs - samples' /}
+
+<style type="text/css">
+	#log span {
+		display: block;
+		clear: both;
+	}
+	
+	fieldset {
+		display: inline;
+		width: 45%;
+		vertical-align: top;
+	}
+</style>
+<script type="text/javascript">
+
+	$(document).ready(function() {
+	
+		$('body').live('ajax:before', function(event, xhr, settings) {
+			$('#log').append("<span>ajax:before</span>");
+		});
+		
+		$('body').live('ajax:beforeSend', function(event, xhr, settings) {
+			$('#log').append("<span>ajax:beforeSend</span>");
+		});
+		
+		$('body').live('ajax:success', function(event, xhr, settings) {
+			$('#log').append("<span>ajax:success</span>");
+		});
+		
+		$('body').live('ajax:error', function(event, xhr, settings) {
+			$('#log').append("<span>ajax:error</span>");
+		});
+		
+		$('body').live('ajax:complete', function(event, xhr, settings) {
+			$('#log').append("<span>ajax:complete</span>");
+		});
+		
+		$('body').live('ajax:aborted:required', function(event, xhr, settings) {
+			$('#log').append("<span>ajax:aborted:required</span>");
+		});
+		
+		$('body').live('ajax:aborted:file', function(event, xhr, settings) {
+			$('#log').append("<span>ajax:aborted:file</span>");
+		});
+		
+	});
+
+</script>
+
+<fieldset>
+	<legend>Form samples</legend>
+	<form id="withajax" action="@{save()}" method="post" data-remote="true" data-confirm="Confirm?">
+		#{authenticityToken /}
+		<input name="user" type="text" />
+		<input type="submit" data-disable-with="Saving..." value="Save with ajax" />
+	</form>
+	<br />
+	<form id="withoutajax" action="@{save()}" method="post">
+		#{authenticityToken /}
+		<input name="user" type="text" />
+		<input type="submit" value="Save without ajax" />
+	</form>
+</fieldset>
+
+<fieldset>
+	<legend>Links samples</legend>
+	<div><a href="@{show}?user=Show with ajax!" data-remote="true" data-disable-with="disabling link..." >Show with ajax!</a></div>
+	<div><a href="@{show}">Show without ajax!</a></div>
+	<div><a href="@{error}" data-remote="true" data-disable-with="disabling link..." >Force error</a></div>
+</fieldset>
+
+<fieldset>
+	<legend>Select sample</legend>
+	<select name="country" data-remote="true" data-url="@{country}">
+		<option>Select a country</option>
+		<option value="US">USA</option>
+		<option value="BR">Brazil</option>
+		<option value="PT">Portugal</option>
+	</select>
+</fieldset>
+
+<fieldset>
+	<legend>Textarea sample</legend>
+	<textarea rows="5" cols="40" name="country" data-remote="true" data-url="@{country}"></textarea>
+</fieldset>
+
+<div>
+	<fieldset>
+		<legend>Ajax log events</legend>
+		<div id="log"></div>
+	</fieldset>
+	<fieldset>
+		<legend>Responses</legend>
+		<div id="responses"></div>
+	</fieldset>
+</div>

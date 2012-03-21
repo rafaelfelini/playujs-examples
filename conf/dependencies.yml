@@ -1,0 +1,12 @@
+# Application dependencies
+
+require:
+    - play
+    - playujs -> playujs
+
+repositories:
+    - git repo:
+        type:       http
+        artifact:   https://github.com/rafaelfelini/playujs/raw/master/dist/playujs-0.1.zip
+        contains:
+            - playujs -> *
