@@ -15,4 +15,6 @@ play deps
 play run
 Browse: http://localhost:9000/
 
+or browser to http://playujs.herokuapp.com/ to see the live sample.
+
 Enjoy!
