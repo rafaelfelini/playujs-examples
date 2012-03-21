@@ -5,7 +5,7 @@ by *Rafael Felini*
 
 h2. Description
 
-playujs-examples is an playframework app using playujs module
+playujs-examples is an playframework app using "playujs":https://github.com/rafaelfelini/playujs module
 
 h2. Running the example
 
