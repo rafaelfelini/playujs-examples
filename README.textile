@@ -9,8 +9,7 @@ playujs-examples is an playframework app using playujs module
 
 h2. Running the example
 
-bc. 
-git clone git@github.com:rafaelfelini/playujs-examples.git
+bc. git clone git@github.com:rafaelfelini/playujs-examples.git
 cd playujs-examples
 play deps
 play run

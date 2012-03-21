@@ -9,6 +9,7 @@ db
 eclipse
 log
 logs
+modules
 precompiled
 tmp
 test-result
